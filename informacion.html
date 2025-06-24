@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Información de Nuestro Local de Masajes</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #5d4037; /* Marrón oscuro para un toque terrenal */
+        --secondary-color: #a1887f; /* Marrón claro sutil */
+        --accent-color: #ffcc80; /* Naranja suave para resaltar */
+        --text-color: #3e2723; /* Marrón muy oscuro para el texto */
+        --bg-light: #f5f5f5; /* Fondo claro general */
+        --bg-dark: #4e342e; /* Fondo oscuro para secciones específicas */
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-light);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      header {
+        text-align: center;
+        border-bottom: 2px solid var(--secondary-color);
+      }
+
+      header h1 {
+        font-family: "Playfair Display", serif;
+        color: var(--primary-color);
+      }
+
+      header p {
+        font-size: 1.1em;
+        color: var(--secondary-color);
+      }
+
+      .section {
+        margin-bottom: 40px;
+        padding: 25px;
+        background-color: var(--bg-light);
+        border-radius: 8px;
+        border-left: 5px solid var(--accent-color);
+      }
+
+      .section h2 {
+        font-family: "Playfair Display", serif;
+        color: var(--primary-color);
+        font-size: 2em;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      .section h2::before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+      }
+
+      #location h2::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/5D4037/marker.png");
+      } /* Icono de ubicación */
+      #what-we-do h2::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/5D4037/massage.png");
+      } /* Icono de masaje */
+      #experience h2::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/5D4037/star.png");
+      } /* Icono de estrella */
+      #who-we-work-with h2::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/5D4037/handshake.png");
+      } /* Icono de manos */
+      #products h2::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/5D4037/cream.png");
+      } /* Icono de crema */
+
+      .section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .section ul li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+      }
+
+      .section ul li::before {
+        content: "•";
+        color: var(--accent-color);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+        position: absolute;
+        left: 0;
+      }
+
+      p {
+        margin-bottom: 15px;
+        color: var(--text-color);
+      }
+
+      .highlight {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      .map-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-top: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px dashed var(--secondary-color);
+        color: var(--secondary-color);
+        font-size: 0.9em;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          margin: 20px;
+          padding: 15px;
+        }
+        header h1 {
+          font-size: 2em;
+        }
+        .section h2 {
+          font-size: 1.6em;
+        }
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>MASAJES OK</h1>
+      <span class="menu-toggle">&#9776;</span>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="disponible.html">Masajes disponibles</a></li>
+          <li><a href="informacion.html">Información</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <header>
+        <h1>Relájate y Renueva: Tu Oasis de Bienestar</h1>
+        <p>
+          Descubre el arte del masaje y la sanación en un espacio diseñado para
+          ti.
+        </p>
+      </header>
+
+      <section id="location" class="section">
+        <h2>Nuestra Ubicación</h2>
+        <p>
+          Nos encontramos en el corazón de
+          <span class="highlight">[Tu Ciudad/Barrio]</span>, un lugar de fácil
+          acceso y con ambiente tranquilo, perfecto para tu desconexión.
+        </p>
+        <p>
+          📍 **Dirección:** [Tu Dirección Completa, por ejemplo: Calle Ficticia
+          123, Edificio Bienestar, Oficina 405]
+        </p>
+        <p>
+          Estamos convenientemente ubicados cerca de
+          <span class="highlight"
+            >[Menciona un punto de referencia cercano, por ejemplo: el Parque
+            Central / la Estación de Autobuses]</span
+          >, con opciones de transporte público y estacionamiento cercano.
+        </p>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.6223890342153!2d-79.81763551114497!3d-3.3217040999999896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9033150020cac86f%3A0x24a693f7caf4cb15!2sAcademia%20de%20gimnasia%20art%C3%ADstica%20Vicbriy!5e1!3m2!1ses-419!2sec!4v1750630850838!5m2!1ses-419!2sec"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="what-we-do" class="section">
+        <h2>Lo Que Hacemos</h2>
+        <p>
+          En **[Nombre de tu Local de Masajes]** nos especializamos en ofrecer
+          una amplia gama de terapias de masaje diseñadas para promover tu
+          bienestar físico y mental. Nuestro objetivo es aliviar tensiones,
+          reducir el estrés y revitalizar tu cuerpo.
+        </p>
+        <p>Ofrecemos:</p>
+        <ul>
+          <li>
+            **Masaje Relajante:** Ideal para liberar el estrés y la tensión
+            acumulada, promoviendo una profunda calma.
+          </li>
+          <li>
+            **Masaje Descontracturante:** Enfocado en aliviar nudos y
+            contracturas musculares, mejorando la movilidad.
+          </li>
+          <li>
+            **Masaje con Piedras Calientes:** Una experiencia que combina el
+            calor de las piedras con técnicas de masaje para una relajación
+            profunda.
+          </li>
+          <li>
+            **Drenaje Linfático Manual:** Ayuda a reducir la retención de
+            líquidos y desintoxicar el cuerpo.
+          </li>
+          <li>
+            **Reflexología Podal:** Estimulación de puntos específicos en los
+            pies para equilibrar el cuerpo.
+          </li>
+          <li>
+            **[Añade otros tipos de masajes que ofrezcas, por ejemplo: Masaje
+            Deportivo, Masaje de Tejido Profundo, etc.]**
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section id="experience" class="section">
+        <h2>Nuestra Experiencia y Compromiso</h2>
+        <p>
+          Contamos con un equipo de
+          <span class="highlight"
+            >terapeutas altamente cualificados y con años de experiencia</span
+          >
+          en diversas técnicas de masaje. Cada miembro de nuestro equipo está
+          dedicado a brindar un servicio personalizado y de la más alta calidad,
+          asegurando que cada visita sea una experiencia única y beneficiosa.
+        </p>
+        <p>Nuestra filosofía se basa en:</p>
+        <ul>
+          <li>
+            **Profesionalismo:** Formación continua y conocimiento actualizado.
+          </li>
+          <li>
+            **Empatía:** Escuchamos tus necesidades para adaptar cada sesión.
+          </li>
+          <li>
+            **Bienestar Integral:** Nos preocupamos por tu salud física y
+            emocional.
+          </li>
+          <li>
+            **Ambiente Sereno:** Creamos un espacio tranquilo y acogedor para tu
+            relajación.
+          </li>
+        </ul>
+        <p>¡Tu bienestar es nuestra prioridad!</p>
+      </section>
+
+      <hr />
+
+      <section id="who-we-work-with" class="section">
+        <h2>Con Quiénes Trabajamos</h2>
+        <p>
+          En **[Nombre de tu Local de Masajes]**, valoramos las alianzas
+          estratégicas y la colaboración para ofrecer un servicio más completo a
+          nuestros clientes.
+        </p>
+        <ul>
+          <li>
+            **Particulares:** Nuestro principal enfoque es el público general
+            que busca relajación, alivio del dolor y bienestar.
+          </li>
+          <li>
+            **Empresas:** Ofrecemos programas de bienestar corporativo y masajes
+            en el lugar de trabajo para reducir el estrés y aumentar la
+            productividad de los empleados.
+          </li>
+          <li>
+            **Deportistas:** Colaboramos con atletas para ayudar en la
+            recuperación muscular, prevención de lesiones y mejora del
+            rendimiento.
+          </li>
+          <li>
+            **Centros de Yoga y Pilates:** Complementamos sus prácticas con
+            masajes que mejoran la flexibilidad y el alivio muscular.
+          </li>
+          <li>
+            **[Añade otros colaboradores si los tienes, por ejemplo:
+            Fisioterapeutas, Spas, Hoteles, etc.]**
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section id="products" class="section">
+        <h2>Productos que Utilizamos</h2>
+        <p>
+          Para garantizar una experiencia de masaje óptima y segura, utilizamos
+          únicamente productos de la más alta calidad, seleccionados
+          cuidadosamente por sus propiedades beneficiosas y naturales. Nos
+          preocupamos por tu piel y tu salud.
+        </p>
+        <p>Nuestros productos incluyen:</p>
+        <ul>
+          <li>
+            **Aceites Esenciales Puros:** De marcas reconocidas como
+            <span class="highlight"
+              >[Marca 1, por ejemplo: DōTERRA, Young Living, Pranarôm]</span
+            >. Utilizamos lavanda, eucalipto, menta, y otros, elegidos según las
+            necesidades de cada masaje.
+          </li>
+          <li>
+            **Aceites Portadores Orgánicos:** Como aceite de almendras dulces,
+            jojoba o coco, ideales para todo tipo de piel y con propiedades
+            hidratantes.
+          </li>
+          <li>
+            **Cremas y Geles Terapéuticos:** Específicos para masajes
+            descontracturantes o deportivos, con ingredientes activos como
+            árnica o caléndula. Marcas como
+            <span class="highlight"
+              >[Marca 2, por ejemplo: Weleda, Biofreeze]</span
+            >.
+          </li>
+          <li>
+            **Exfoliantes Naturales (si aplica):** Si ofreces tratamientos
+            corporales, menciona exfoliantes a base de sales marinas o azúcar.
+          </li>
+          <li>
+            **[Añade otros productos específicos si los usas, por ejemplo:
+            Toallas 100% algodón, sábanas hipoalergénicas, etc.]**
+          </li>
+        </ul>
+        <p>
+          Todos nuestros productos son
+          <span class="highlight">libres de parabenos y químicos agresivos</span
+          >, pensados para tu bienestar y el cuidado del medio ambiente.
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2025 [Nombre de tu Local de Masajes]. Todos los derechos
+        reservados.
+      </p>
+      <p>¡Te esperamos para tu momento de relajación!</p>
+    </footer>
+  </body>
+</html>

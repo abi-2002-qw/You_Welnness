@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contacto y Pie de Página - Local de Masajes</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #69dd90; /* Marrón oscuro para un toque terrenal */
+        --secondary-color: #a1887f; /* Marrón claro sutil */
+        --accent-color: #0c0906; /* Naranja suave para resaltar */
+        --text-color: #311c18; /* Marrón muy oscuro para el texto */
+        --bg-light: #f5f5f5; /* Fondo claro general */
+        --bg-dark: #4ba8ac; /* Fondo oscuro para secciones específicas */
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-light);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      /* --- Estilos de la Sección de Contacto --- */
+      .contact-section {
+        padding: 40px 20px;
+        text-align: center;
+        background-color: var(--bg-dark);
+        color: #ffffff;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .contact-section h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5em;
+        color: var(--accent-color);
+        margin-bottom: 25px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .contact-item {
+        background-color: var(--primary-color);
+        padding: 25px 30px;
+        border-radius: 8px;
+        flex: 1 1 280px; /* Permite que los elementos se expandan pero no más de 280px */
+        max-width: 32%; /* Ajuste para 3 columnas en desktop */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-item i {
+        /* Para iconos de Font Awesome, si los añades */
+        font-size: 2.2em;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+        display: block; /* Para que el icono esté en su propia línea */
+      }
+      /* Para usar iconos de imágenes si no se usa Font Awesome */
+      .contact-item .icon {
+        width: 50px; /* Tamaño de la imagen del icono */
+        height: 50px;
+        margin-bottom: 15px;
+      }
+
+      .contact-item h3 {
+        color: var(--accent-color);
+        font-size: 1.3em;
+        margin-bottom: 10px;
+      }
+
+      .contact-item p,
+      .contact-item a {
+        color: #ffffff;
+        font-size: 1em;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      .social-media {
+        margin-top: 30px;
+      }
+
+      .social-media h3 {
+        color: var(--accent-color);
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+
+      .social-icons a {
+        display: inline-block;
+        margin: 0 15px;
+        font-size: 2.5em; /* Tamaño de los iconos de redes sociales */
+        color: #ffffff;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-icons a img {
+        width: 45px; /* Tamaño de las imágenes de iconos */
+        height: 45px;
+        vertical-align: middle;
+        transition: transform 0.3s ease;
+      }
+
+      .social-icons a:hover img {
+        transform: scale(1.1);
+      }
+
+      /* --- Estilos del Formulario de Contacto --- */
+      .contact-form-section {
+        padding: 40px 20px;
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        margin-top: 40px;
+      }
+
+      .contact-form-section h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2em;
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-form label {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .contact-form input[type="text"],
+      .contact-form input[type="email"],
+      .contact-form input[type="tel"],
+      .contact-form textarea {
+        width: calc(100% - 20px); /* Ajusta el ancho para padding */
+        padding: 12px;
+        border: 1px solid var(--secondary-color);
+        border-radius: 5px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1em;
+        background-color: #fcfcfc;
+        color: var(--text-color);
+      }
+
+      .contact-form textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .contact-form button {
+        background-color: var(--primary-color);
+        color: #ffffff;
+        padding: 15px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-top: 15px;
+      }
+
+      .contact-form button:hover {
+        background-color: var(--text-color);
+        transform: translateY(-2px);
+      }
+
+      /* --- Estilos del Footer --- */
+      footer {
+        text-align: center;
+        margin-top: 50px;
+        padding: 30px 20px;
+        border-top: 1px solid var(--secondary-color);
+        background-color: var(--bg-dark);
+        color: #ffffff;
+        font-size: 0.9em;
+        border-radius: 10px;
+      }
+
+      footer .footer-links {
+        margin-bottom: 15px;
+      }
+
+      footer .footer-links a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s ease;
+      }
+
+      footer .footer-links a:hover {
+        color: var(--accent-color);
+        text-decoration: underline;
+      }
+
+      footer p {
+        margin: 5px 0;
+        color: var(--secondary-color);
+      }
+
+      /* --- Media Queries para Responsividad --- */
+      @media (max-width: 768px) {
+        .container {
+          margin: 20px;
+          padding: 15px;
+        }
+        .contact-section h2 {
+          font-size: 2em;
+        }
+        .contact-info {
+          flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+          gap: 20px;
+        }
+        .contact-item {
+          max-width: 100%; /* Ocupa todo el ancho disponible */
+        }
+        .social-icons a {
+          margin: 0 10px;
+          font-size: 2em;
+        }
+        .social-icons a img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>MASAJES OK</h1>
+      <span class="menu-toggle">&#9776;</span>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="disponible.html">Masajes disponibles</a></li>
+          <li><a href="informacion.html">Información</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <section class="contact-section">
+        <h2>¡Contáctanos para tu Momento de Bienestar!</h2>
+        <p>
+          Estamos listos para ayudarte a encontrar la relajación y el alivio que
+          mereces. Ponte en contacto con nosotros a través de los siguientes
+          medios:
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <img
+              src="https://img.icons8.com/ios-filled/64/FFFFFF/phone.png"
+              alt="Teléfono"
+              class="icon"
+            />
+            <h3>Teléfono</h3>
+            <p><a href="tel:+593999999999">+593 999 999 999</a></p>
+            <p>Llámanos para agendar tu cita o resolver cualquier duda.</p>
+          </div>
+          <div class="contact-item">
+            <img
+              src="https://img.icons8.com/ios-filled/64/FFFFFF/new-post.png"
+              alt="Correo Electrónico"
+              class="icon"
+            />
+            <h3>Correo Electrónico</h3>
+            <p><a href="mailto:info@tumail.com">info@tumail.com</a></p>
+            <p>Envíanos un email, te responderemos a la brevedad.</p>
+          </div>
+          <div class="contact-item">
+            <img
+              src="https://img.icons8.com/ios-filled/64/FFFFFF/calendar.png"
+              alt="Horario"
+              class="icon"
+            />
+            <h3>Horario de Atención</h3>
+            <p>Lunes a Viernes: 9:00 AM - 8:00 PM</p>
+            <p>Sábados: 10:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+
+        <div class="social-media">
+          <h3>Síguenos en Redes Sociales</h3>
+          <p>
+            Mantente al tanto de nuestras promociones, consejos de bienestar y
+            novedades.
+          </p>
+          <div class="social-icons">
+            <a
+              href="[Tu Enlace de Facebook]"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/64/FFFFFF/facebook-new.png"
+                alt="Facebook"
+              />
+            </a>
+            <a
+              href="[Tu Enlace de Instagram]"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/64/FFFFFF/instagram-new.png"
+                alt="Instagram"
+              />
+            </a>
+            <a
+              href="[Tu Enlace de WhatsApp - Ejemplo: https://wa.me/593999999999?text=Hola%2C%20quisiera%20saber%20más%20sobre%20sus%20masajes]"
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/64/FFFFFF/whatsapp.png"
+                alt="WhatsApp"
+              />
+            </a>
+            <a href="[Tu Enlace de TikTok]" target="_blank" aria-label="TikTok">
+              <img
+                src="https://img.icons8.com/ios-filled/64/FFFFFF/tiktok--v1.png"
+                alt="TikTok"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a> | <a href="#servicios">Servicios</a> |
+        <a href="#informacion">Información</a> |
+        <a href="#contacto">Contacto</a> |
+        <a href="[Enlace a Política de Privacidad]">Política de Privacidad</a> |
+        <a href="[Enlace a Términos y Condiciones]">Términos y Condiciones</a>
+      </div>
+      <p>
+        &copy; 2025 **[Nombre de tu Local de Masajes]**. Todos los derechos
+        reservados.
+      </p>
+      <p>Diseñado con pasión por el bienestar en Alamor, Loja, Ecuador.</p>
+      <p>¡Te esperamos para tu momento de relajación!</p>
+    </footer>
+  </body>
+</html>

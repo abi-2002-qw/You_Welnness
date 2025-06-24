@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masajes OK</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f3;
+      color: #333;
+    }
+
+    header {
+      background-color: #38a1a5;
+      text-align: center;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .masaje-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .masaje-card img {
+      width: 100%;
+      max-width: 250px;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .masaje-text {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .masaje-text h2 {
+      margin: 0 0 10px;
+      color: #d9534f;
+    }
+
+    .masaje-text p {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .precio {
+      font-weight: bold;
+      color: #5cb85c;
+      font-size: 1.1rem;
+    }
+
+    video {
+      display: block;
+      margin: 0 auto 40px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .masaje-card {
+        flex-direction: column;
+        align-items: center;
+      }
+      .masaje-card img {
+        max-width: 100%;
+      }
+    }
+    .video-container{
+      max-height: 400px;
+      max-width: 400px;
+    }
+    .menu-toggle {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  </style>
+</head>
+<body>
+
+<header>
+    <h1>MASAJES OK</h1>
+    <span class="menu-toggle">&#9776;</span>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="disponible.html">Masajes disponibles</a></li>
+        <li><a href="informacion.html">Información</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div>
+    <video controls class = "video-container">
+      <source src="./img/Video de WhatsApp 2025-06-22 a las 16.11.36_5b143829.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+    </div>
+
+
+    <div class="masaje-card">
+      <img src="./img/Imagen de WhatsApp 2025-06-22 a las 16.46.28_41323dbc.jpg" alt="Masaje sueco">
+      <div class="masaje-text">
+        <h2>Masaje Sueco</h2>
+        <p>Ideal para aliviar la tensión muscular y mejorar la circulación.</p>
+        <p class="precio">$45</p>
+      </div>
+    </div>
+
+    <div class="masaje-card">
+      <img src="./img/Imagen de WhatsApp 2025-06-22 a las 16.47.13_18dc5d83.jpg" alt="Masaje con piedras calientes">
+      <div class="masaje-text">
+        <h2>Masaje con Piedras Calientes</h2>
+        <p>Piedras volcánicas calientes para relajar profundamente músculos y mente.</p>
+        <p class="precio">$50</p>
+      </div>
+    </div>
+     <div class="masaje-card">
+      <img src="./img/Imagen de WhatsApp 2025-06-22 a las 16.47.50_e5b9cc5e.jpg" alt="Masaje sueco">
+      <div class="masaje-text">
+        <h2>Masaje Sueco</h2>
+        <p>Ideal para aliviar la tensión muscular y mejorar la circulación.</p>
+        <p class="precio">$45</p>
+      </div>
+    </div>
+     <div class="masaje-card">
+      <img src="./img/Imagen de WhatsApp 2025-06-22 a las 16.48.47_014ab093.jpg" alt="Masaje sueco">
+      <div class="masaje-text">
+        <h2>Masaje Sueco</h2>
+        <p>Ideal para aliviar la tensión muscular y mejorar la circulación.</p>
+        <p class="precio">$45</p>
+      </div>
+    </div>
+    <div class="masaje-card">
+      <img class = "img-masajes" src="./img/Imagen de WhatsApp 2025-06-22 a las 16.48.58_ea72aa8b.jpg" alt="Masaje con piedras calientes">
+      <div class="masaje-text">
+        <h2>Masaje con Piedras Calientes</h2>
+        <p>Piedras volcánicas calientes para relajar profundamente músculos y mente.</p>
+        <p class="precio">$50</p>
+      </div>
+      </div>
+    <div class="masaje-card">
+      <img  class = "img-masajes"  src="./img/Imagen de WhatsApp 2025-06-22 a las 16.38.38_7f6f7170.jpg" alt="Masaje con piedras calientes">
+      <div class="masaje-text">
+        <h2>Masaje con Piedras Calientes</h2>
+        <p>Piedras volcánicas calientes para relajar profundamente músculos y mente.</p>
+        <p class="precio">$50</p>
+      </div>  
+      
+
+  
+
+</body>
+</html>
